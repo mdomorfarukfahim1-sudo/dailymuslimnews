@@ -30,25 +30,44 @@ overflow: hidden;
 .product-content{padding:15px;}
 .price{color:#0a5c3b;font-weight:bold;}
 
-/* সোশ্যাল মিডিয়া সেকশন */
+/* সোশ্যাল মিডিয়া সেকশন স্টাইল */
 .social-section {
     background: white;
     max-width: 600px;
-    margin: 30px auto 10px auto;
+    margin: 30px auto;
     padding: 25px;
     border-radius: 15px;
     text-align: center;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
 
-.social-section h2 { font-size: 22px; margin-bottom: 20px; color: #333; }
+.social-section h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: #333;
+}
 
-.social-buttons { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+.social-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+}
 
 .social-btn {
-    display: flex; align-items: center; gap: 10px; padding: 12px 20px; border-radius: 8px;
-    color: white; text-decoration: none; font-weight: bold; font-size: 14px;
-    transition: 0.3s; flex: 1; min-width: 200px; justify-content: center;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    transition: 0.3s;
+    flex: 1;
+    min-width: 200px;
+    justify-content: center;
 }
 
 .youtube { background-color: #FF0000; }
@@ -57,33 +76,21 @@ overflow: hidden;
 
 .social-btn:hover { opacity: 0.9; transform: scale(1.02); }
 
-/* বিদ্রো সেকশন স্টাইল */
-.notice-box {
-    background: #fff;
-    max-width: 600px;
-    margin: 0 auto 30px auto;
-    padding: 20px;
-    border-radius: 12px;
-    border-left: 6px solid #0a5c3b;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    text-align: left;
-}
-
-.notice-box p {
-    margin: 0;
-    color: #444;
-    font-size: 15px;
-    line-height: 1.6;
-}
-
-.notice-box strong { color: #d9534f; }
-
-/* বাটন ও অন্যান্য পেজ স্টাইল */
+/* বাটন ও অন্যান্য স্টাইল */
 .back-btn {
     background: linear-gradient(135deg, #0a5c3b, #158a58);
-    color: white; border: none; padding: 10px 20px; border-radius: 50px;
-    cursor: pointer; font-size: 16px; font-weight: bold; display: flex;
-    align-items: center; gap: 8px; margin-bottom: 20px; transition: 0.3s;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
 }
 
 .product-page{display:none;padding:20px;}
@@ -148,6 +155,14 @@ input,select{width:100%;padding:10px;margin-bottom:10px;border-radius:6px;border
                 <p class="price">৳650</p>
             </div>
         </div>
+         <!-- ✅ NEW PRODUCT 2 -->
+        <div class="product" onclick="openProduct('ডিজাইন টুপি', 300, 'স্টাইলিশ ডিজাইন ইসলামিক টুপি।', 'https://i.pinimg.com/1200x/19/84/0d/19840d36ea9f465734acd8953c9973ec.jpg')">
+            <img src="https://i.pinimg.com/1200x/19/84/0d/19840d36ea9f465734acd8953c9973ec.jpg">
+            <div class="product-content">
+                <h3>ডিজাইন টুপি</h3>
+                <p class="price">৳300</p>
+            </div>
+        </div>
     </div>
 
     <div class="social-section">
@@ -163,10 +178,6 @@ input,select{width:100%;padding:10px;margin-bottom:10px;border-radius:6px;border
                 <i class="fab fa-facebook"></i> Daily Muslim News Facebook
             </a>
         </div>
-    </div>
-
-    <div class="notice-box">
-        <p><strong>বিদ্রো:</strong> আমরা সরাসরি আমদানিকারক থেকে সংগ্রহ করা প্রিমিয়াম কোয়ালিটির পণ্য নিশ্চিত করি। পণ্য হাতে পেয়ে চেক করে পেমেন্ট করার সুযোগ রয়েছে।</p>
     </div>
 </div>
 
