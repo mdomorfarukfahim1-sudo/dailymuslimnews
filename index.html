@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Daily Muslim Shop</title>
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
 <style>
 body{margin:0;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;background:#f4f4f4;}
 
@@ -28,85 +30,79 @@ overflow: hidden;
 .product-content{padding:15px;}
 .price{color:#0a5c3b;font-weight:bold;}
 
-/* --- কাস্টমাইজড ফিরে যান বাটন (Animated Back Button) --- */
+/* সোশ্যাল মিডিয়া সেকশন */
+.social-section {
+    background: white;
+    max-width: 600px;
+    margin: 30px auto 10px auto;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.social-section h2 { font-size: 22px; margin-bottom: 20px; color: #333; }
+
+.social-buttons { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+
+.social-btn {
+    display: flex; align-items: center; gap: 10px; padding: 12px 20px; border-radius: 8px;
+    color: white; text-decoration: none; font-weight: bold; font-size: 14px;
+    transition: 0.3s; flex: 1; min-width: 200px; justify-content: center;
+}
+
+.youtube { background-color: #FF0000; }
+.tiktok { background-color: #000000; }
+.facebook { background-color: #1877F2; width: 100%; max-width: 412px; }
+
+.social-btn:hover { opacity: 0.9; transform: scale(1.02); }
+
+/* বিদ্রো সেকশন স্টাইল */
+.notice-box {
+    background: #fff;
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+    padding: 20px;
+    border-radius: 12px;
+    border-left: 6px solid #0a5c3b;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    text-align: left;
+}
+
+.notice-box p {
+    margin: 0;
+    color: #444;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.notice-box strong { color: #d9534f; }
+
+/* বাটন ও অন্যান্য পেজ স্টাইল */
 .back-btn {
     background: linear-gradient(135deg, #0a5c3b, #158a58);
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 50px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 20px;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(10, 92, 59, 0.3);
+    color: white; border: none; padding: 10px 20px; border-radius: 50px;
+    cursor: pointer; font-size: 16px; font-weight: bold; display: flex;
+    align-items: center; gap: 8px; margin-bottom: 20px; transition: 0.3s;
 }
-
-.back-btn:hover {
-    transform: translateX(-5px) scale(1.05);
-    background: linear-gradient(135deg, #158a58, #0a5c3b);
-    box-shadow: 0 6px 20px rgba(10, 92, 59, 0.4);
-}
-
-.back-btn:active {
-    transform: scale(0.95);
-}
-
-.back-btn span {
-    transition: transform 0.3s ease;
-}
-
-.back-btn:hover span {
-    transform: translateX(-3px);
-}
-/* ------------------------------------------ */
 
 .product-page{display:none;padding:20px;}
 .container{display:flex;gap:20px;flex-wrap:wrap; justify-content: center;}
 .left img{width:100%; max-width: 350px; border-radius:10px;}
-
 .right{background:white;padding:20px;border-radius:10px;flex:1; max-width: 500px;}
 
-.btn{
-padding:12px;margin-top:10px;border:none;
-cursor:pointer;border-radius:6px;width:100%; font-weight: bold;
-}
+.btn{padding:12px;margin-top:10px;border:none; cursor:pointer;border-radius:6px;width:100%; font-weight: bold;}
 .buy{background:#2abbe8;color:white;}
 .cart-btn{background:#f57224;color:white;}
 
-.rating{color:#ff9800;}
-
-/* CART */
-.cart{
-position:fixed;right:0;top:0;width:300px;height:100%;
-background:white;transform:translateX(100%);
-transition:.4s;padding:15px;z-index:1000; box-shadow: -2px 0 10px rgba(0,0,0,0.2);
-}
+.cart{position:fixed;right:0;top:0;width:300px;height:100%; background:white;transform:translateX(100%); transition:.4s;padding:15px;z-index:1000; box-shadow: -2px 0 10px rgba(0,0,0,0.2);}
 .cart.active{transform:translateX(0);}
-
-.overlay{
-position:fixed;top:0;left:0;width:100%;height:100%;
-background:rgba(0,0,0,0.4);display:none; z-index: 999;
-}
+.overlay{position:fixed;top:0;left:0;width:100%;height:100%; background:rgba(0,0,0,0.4);display:none; z-index: 999;}
 .overlay.active{display:block;}
 
-.cart-item{display:flex;justify-content:space-between;margin:10px 0; border-bottom: 1px solid #eee; padding-bottom: 5px;}
-
-/* CHECKOUT */
-.checkout{
-display:none;padding:20px;background:white;margin:20px auto;border-radius:10px; max-width: 600px;
-box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-input,select{
-width:100%;padding:10px;margin-bottom:10px;border-radius:6px;border:1px solid #ccc; box-sizing: border-box;
-}
-
+.checkout{display:none;padding:20px;background:white;margin:20px auto;border-radius:10px; max-width: 600px;}
+input,select{width:100%;padding:10px;margin-bottom:10px;border-radius:6px;border:1px solid #ccc; box-sizing: border-box;}
 .confirm-btn {background: #0a5c3b; color: white; border: none; padding: 15px; width: 100%; border-radius: 6px; cursor: pointer; font-size: 16px;}
-
 </style>
 </head>
 
@@ -119,45 +115,63 @@ width:100%;padding:10px;margin-bottom:10px;border-radius:6px;border:1px solid #c
     </button>
 </header>
 
-<div id="home" class="products">
+<div id="home">
+    <div class="products">
+        <div class="product" onclick="openProduct('আজওয়া খেজুর', 1200, 'অরিজিনাল মদিনার আজওয়া খেজুর।', 'https://i.pinimg.com/1200x/aa/b6/c3/aab6c3cea13805bce39f7a1b00bb271e.jpg')">
+            <img src="https://i.pinimg.com/1200x/aa/b6/c3/aab6c3cea13805bce39f7a1b00bb271e.jpg">
+            <div class="product-content">
+                <h3>আজওয়া খেজুর</h3>
+                <p class="price">৳1200</p>
+            </div>
+        </div>
 
-    <div class="product" onclick="openProduct('আজওয়া খেজুর', 1200, 'অরিজিনাল মদিনার আজওয়া খেজুর।', 'https://i.pinimg.com/1200x/aa/b6/c3/aab6c3cea13805bce39f7a1b00bb271e.jpg')">
-        <img src="https://i.pinimg.com/1200x/aa/b6/c3/aab6c3cea13805bce39f7a1b00bb271e.jpg">
-        <div class="product-content">
-            <h3>আজওয়া খেজুর</h3>
-            <p class="price">৳1200</p>
+        <div class="product" onclick="openProduct('মাবরুম খেজুর', 900, 'সৌদি আরবের প্রিমিয়াম মাবরুম খেজুর।', 'https://i.pinimg.com/736x/ec/ab/fe/ecabfe6ac53da266f30e9b23386e3634.jpg')">
+            <img src="https://i.pinimg.com/736x/ec/ab/fe/ecabfe6ac53da266f30e9b23386e3634.jpg">
+            <div class="product-content">
+                <h3>মাবরুম খেজুর</h3>
+                <p class="price">৳900</p>
+            </div>
+        </div>
+
+        <div class="product" onclick="openProduct('আতর (Attar)', 750, 'মনোমুগ্ধকর সুগন্ধি প্রিমিয়াম আতর।', 'https://images.unsplash.com/photo-1608571423902-eed4a5ad8108')">
+            <img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108">
+            <div class="product-content">
+                <h3>আতর</h3>
+                <p class="price">৳750</p>
+            </div>
+        </div>
+
+        <div class="product" onclick="openProduct('পাঞ্জাবী', 650, 'উন্নত মানের কটন পাঞ্জাবী।', 'https://i.pinimg.com/736x/85/19/41/8519418983763beb15cb1893cf355d4f.jpg')">
+            <img src="https://i.pinimg.com/736x/85/19/41/8519418983763beb15cb1893cf355d4f.jpg">
+            <div class="product-content">
+                <h3>পাঞ্জাবী</h3>
+                <p class="price">৳650</p>
+            </div>
         </div>
     </div>
 
-    <div class="product" onclick="openProduct('মাবরুম খেজুর', 900, 'সৌদি আরবের প্রিমিয়াম মাবরুম খেজুর।', 'https://i.pinimg.com/736x/ec/ab/fe/ecabfe6ac53da266f30e9b23386e3634.jpg')">
-        <img src="https://i.pinimg.com/736x/ec/ab/fe/ecabfe6ac53da266f30e9b23386e3634.jpg">
-        <div class="product-content">
-            <h3>মাবরুম খেজুর</h3>
-            <p class="price">৳900</p>
+    <div class="social-section">
+        <h2>আমার অফিসিয়াল চ্যানেল</h2>
+        <div class="social-buttons">
+            <a href="https://www.youtube.com/@dailymuslimnews/" target="_blank" class="social-btn youtube">
+                <i class="fab fa-youtube"></i> Daily Muslim News YouTube
+            </a>
+            <a href="https://www.tiktok.com/@dailymuslimnews/" target="_blank" class="social-btn tiktok">
+                <i class="fab fa-tiktok"></i> Daily Muslim News TikTok
+            </a>
+            <a href="https://www.facebook.com/dailymuslimnews1/" target="_blank" class="social-btn facebook">
+                <i class="fab fa-facebook"></i> Daily Muslim News Facebook
+            </a>
         </div>
     </div>
 
-    <div class="product" onclick="openProduct('আতর (Attar)', 750, 'মনোমুগ্ধকর সুগন্ধি প্রিমিয়াম আতর।', 'https://images.unsplash.com/photo-1608571423902-eed4a5ad8108')">
-        <img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108">
-        <div class="product-content">
-            <h3>আতর</h3>
-            <p class="price">৳750</p>
-        </div>
+    <div class="notice-box">
+        <p><strong>বিদ্রো:</strong> আমরা সরাসরি আমদানিকারক থেকে সংগ্রহ করা প্রিমিয়াম কোয়ালিটির পণ্য নিশ্চিত করি। পণ্য হাতে পেয়ে চেক করে পেমেন্ট করার সুযোগ রয়েছে।</p>
     </div>
-
-    <div class="product" onclick="openProduct('পাঞ্জাবী', 650, 'উন্নত মানের কটন পাঞ্জাবী।', 'https://i.pinimg.com/736x/85/19/41/8519418983763beb15cb1893cf355d4f.jpg')">
-        <img src="https://i.pinimg.com/736x/85/19/41/8519418983763beb15cb1893cf355d4f.jpg">
-        <div class="product-content">
-            <h3>পাঞ্জাবী</h3>
-            <p class="price">৳650</p>
-        </div>
-    </div>
-
 </div>
 
 <div id="productPage" class="product-page">
     <button class="back-btn" onclick="goHome()"><span>⬅</span> ফিরে যান</button>
-    
     <div class="container">
         <div class="left"><img id="pImg" src=""></div>
         <div class="right">
@@ -173,8 +187,7 @@ width:100%;padding:10px;margin-bottom:10px;border-radius:6px;border:1px solid #c
 
 <div id="cartBox" class="cart">
     <h3>আপনার কার্ট <span onclick="closeCart()" style="cursor:pointer; float: right;">❌</span></h3>
-    <hr>
-    <div id="cartItems"></div>
+    <hr><div id="cartItems"></div>
     <div style="margin-top: 20px;">
         <p>উপ-মোট: ৳ <span id="subtotalDisplay">0</span></p>
         <p>ডেলিভারি চার্জ: ৳ <span id="deliveryDisplay">60</span></p>
@@ -191,24 +204,20 @@ width:100%;padding:10px;margin-bottom:10px;border-radius:6px;border:1px solid #c
     <input type="text" id="custName" placeholder="আপনার নাম লিখুন">
     <input type="tel" id="custPhone" placeholder="আপনার মোবাইল নম্বর">
     <input type="text" id="custAddress" placeholder="আপনার পূর্ণ ঠিকানা">
-
     <label>ডেলিভারি এলাকা:</label>
     <select id="deliveryType" onchange="updateDelivery()">
         <option value="60">ঢাকার ভিতরে (৳60)</option>
         <option value="120">ঢাকার বাইরে (৳120)</option>
     </select>
-
     <label>পেমেন্ট পদ্ধতি:</label>
     <select id="paymentMethod" onchange="toggleBkashInfo()">
         <option value="Cash on Delivery">Cash on Delivery</option>
         <option value="bKash">bKash</option>
         <option value="Nagad">Nagad</option>
     </select>
-
     <p id="bkashInfo" style="display:none; color:green; background: #eaffea; padding: 10px; border-radius: 5px;">
         আমাদের বিকাশ নম্বর: <b>01581523467</b> (Send Money)
     </p>
-
     <button class="confirm-btn" onclick="placeOrder()">অর্ডার কনফার্ম করুন (WhatsApp)</button>
 </div>
 
@@ -228,7 +237,6 @@ width:100%;padding:10px;margin-bottom:10px;border-radius:6px;border:1px solid #c
         home.style.display = "none";
         checkout.style.display = "none";
         productPage.style.display = "block";
-        
         document.getElementById('pTitle').innerText = name;
         document.getElementById('pPrice').innerText = price;
         document.getElementById('pDesc').innerText = desc;
@@ -237,7 +245,7 @@ width:100%;padding:10px;margin-bottom:10px;border-radius:6px;border:1px solid #c
     }
 
     function goHome() {
-        home.style.display = "grid";
+        home.style.display = "block";
         productPage.style.display = "none";
         checkout.style.display = "none";
     }
@@ -251,37 +259,19 @@ width:100%;padding:10px;margin-bottom:10px;border-radius:6px;border:1px solid #c
     function updateCart() {
         document.getElementById('count').innerText = cart.length;
         const cartItemsDiv = document.getElementById('cartItems');
-        
         let subtotal = 0;
         cartItemsDiv.innerHTML = cart.map((item, index) => {
             subtotal += item.price;
-            return `
-                <div class="cart-item">
-                    <span>${item.name}</span>
-                    <span>৳${item.price} <button onclick="removeItem(${index})" style="background:none; border:none; color:red; cursor:pointer;">❌</button></span>
-                </div>
-            `;
+            return `<div class="cart-item"><span>${item.name}</span><span>৳${item.price} <button onclick="removeItem(${index})" style="background:none; border:none; color:red; cursor:pointer;">❌</button></span></div>`;
         }).join("");
-
         document.getElementById('subtotalDisplay').innerText = subtotal;
         document.getElementById('deliveryDisplay').innerText = deliveryCharge;
         document.getElementById('totalDisplay').innerText = subtotal + deliveryCharge;
     }
 
-    function removeItem(index) {
-        cart.splice(index, 1);
-        updateCart();
-    }
-
-    function openCart() {
-        cartBox.classList.add("active");
-        overlay.classList.add("active");
-    }
-
-    function closeCart() {
-        cartBox.classList.remove("active");
-        overlay.classList.remove("active");
-    }
+    function removeItem(index) { cart.splice(index, 1); updateCart(); }
+    function openCart() { cartBox.classList.add("active"); overlay.classList.add("active"); }
+    function closeCart() { cartBox.classList.remove("active"); overlay.classList.remove("active"); }
 
     function buyNow() {
         cart = [{...currentProduct}];
@@ -290,10 +280,7 @@ width:100%;padding:10px;margin-bottom:10px;border-radius:6px;border:1px solid #c
     }
 
     function showCheckout() {
-        if(cart.length === 0) {
-            alert("আপনার কার্ট খালি!");
-            return;
-        }
+        if(cart.length === 0) { alert("আপনার কার্ট খালি!"); return; }
         closeCart();
         productPage.style.display = "none";
         home.style.display = "none";
@@ -317,28 +304,15 @@ width:100%;padding:10px;margin-bottom:10px;border-radius:6px;border:1px solid #c
         const address = document.getElementById('custAddress').value;
         const payment = document.getElementById('paymentMethod').value;
 
-        if (!name || !phone || !address) {
-            alert("অনুগ্রহ করে সব তথ্য সঠিকভাবে দিন।");
-            return;
-        }
+        if (!name || !phone || !address) { alert("অনুগ্রহ করে সব তথ্য সঠিকভাবে দিন।"); return; }
 
         let productList = cart.map(item => `${item.name} (৳${item.price})`).join("\n");
         let subtotal = cart.reduce((sum, item) => sum + item.price, 0);
         let totalAmount = subtotal + deliveryCharge;
 
-        let message = `*নতুন অর্ডার (Daily Muslim Shop)*\n\n` +
-                      `👤 নাম: ${name}\n` +
-                      `📞 ফোন: ${phone}\n` +
-                      `📍 ঠিকানা: ${address}\n\n` +
-                      `🛍️ পন্যসমূহ:\n${productList}\n\n` +
-                      `🚚 ডেলিভারি: ৳${deliveryCharge}\n` +
-                      `💰 মোট মূল্য: ৳${totalAmount}\n` +
-                      `💳 পেমেন্ট: ${payment}\n\n` +
-                      `অর্ডারটি কনফার্ম করুন।`;
-
+        let message = `*নতুন অর্ডার (Daily Muslim Shop)*\n\n👤 নাম: ${name}\n📞 ফোন: ${phone}\n📍 ঠিকানা: ${address}\n\n🛍️ পন্যসমূহ:\n${productList}\n\n🚚 ডেলিভারি: ৳${deliveryCharge}\n💰 মোট মূল্য: ৳${totalAmount}\n💳 পেমেন্ট: ${payment}\n\nঅর্ডারটি কনফার্ম করুন।`;
         const whatsappNumber = "8801581523467"; 
         const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-
         window.open(url, "_blank");
     }
 </script>
