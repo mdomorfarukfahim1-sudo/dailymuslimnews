@@ -9,6 +9,15 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
 <style>
+    html, body {
+    height: auto;
+    min-height: 100%;
+    overflow-y: auto;
+}
+
+#home {
+    padding-bottom: 60px;
+}
 body{margin:0;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;background:#f4f4f4;}
 
 header{background:#0a5c3b;color:white;padding:20px;text-align:center; position: sticky; top: 0; z-index: 100;}
@@ -201,13 +210,61 @@ input,select{width:100%;padding:10px;margin-bottom:10px;border-radius:6px;border
 </header>
 
 <div style="text-align:center; margin-top:10px;">
+    
     <div id="g_id_onload"
-         data-client_id="337102537435-eh5cdfi7n9ko71e2ed79qcfurro95e24.apps.googleusercontent.com"
-         data-callback="handleCredentialResponse">
+        data-client_id="337102537435-eh5cdfi7n9ko71e2ed79qcfurro95e24.apps.googleusercontent.com"
+        data-callback="handleCredentialResponse"
+        data-auto_prompt="false">
     </div>
-    <div class="g_id_signin"></div>
-    <p id="loginStatus" style="margin-top:5px; font-size:14px; color:yellow;"></p>
+
+    <div class="g_id_signin"
+        data-type="standard"
+        data-size="large"
+        data-theme="outline"
+        data-text="sign_in_with"
+        data-shape="pill"
+        data-logo_alignment="left">
+    </div>
+
+    <p id="loginStatus" style="margin-top:8px; font-size:14px; color:#050505;"></p>
+
 </div>
+<script>
+// Google Login Handle
+function handleCredentialResponse(response) {
+    const data = parseJwt(response.credential);
+
+    // Show user name
+    document.getElementById("loginStatus").innerText =
+        "✅ Logged in: " + data.name;
+
+    // Save login
+    localStorage.setItem("user", JSON.stringify(data));
+}
+
+// JWT Decode
+function parseJwt(token) {
+    let base64Url = token.split('.')[1];
+    let base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+    let jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
+        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+    }).join(''));
+
+    return JSON.parse(jsonPayload);
+}
+
+// Auto Login (refresh করলে login থাকবে)
+window.onload = function() {
+    let user = JSON.parse(localStorage.getItem("user"));
+    if(user){
+        document.getElementById("loginStatus").innerText =
+            "✅ Logged in: " + user.name;
+    }
+}
+</script>
+            
+           <!-- all Product  -->
+
 
 <div id="home">
     <div class="products">
@@ -233,7 +290,7 @@ input,select{width:100%;padding:10px;margin-bottom:10px;border-radius:6px;border
         <h3>নামাজের জানেমাজ সেট</h3>
         <p class="price">৳1600 </p>
     </div>
-
+ <!-- ................!!!!!মেজুল খেজুর!!!!........... -->
 </div>
         <div class="product" onclick="openProduct('Medjool Date (মেজুল খেজুর)', 900, 'আমাদের প্রিমিয়াম মানের খেজুর সরাসরি উৎকৃষ্ট মানের বাগান থেকে সংগ্রহ করা।', 'https://i.pinimg.com/736x/b0/72/22/b072225058767ec189a14f2726886209.jpg')">
             <img src="https://i.pinimg.com/736x/b0/72/22/b072225058767ec189a14f2726886209.jpg">
@@ -242,7 +299,7 @@ input,select{width:100%;padding:10px;margin-bottom:10px;border-radius:6px;border
                 <p class="price">৳900</p>
             </div>
         </div>
-
+ <!-- ................!!!!!মাবরুম খেজুর!!!!........... -->
         <div class="product" onclick="openProduct('মাবরুম খেজুর', 900, 'সৌদি আরবের প্রিমিয়াম মাবরুম খেজুর।', 'https://i.pinimg.com/736x/ec/ab/fe/ecabfe6ac53da266f30e9b23386e3634.jpg')">
             <img src="https://i.pinimg.com/736x/ec/ab/fe/ecabfe6ac53da266f30e9b23386e3634.jpg">
             <div class="product-content">
@@ -250,7 +307,7 @@ input,select{width:100%;padding:10px;margin-bottom:10px;border-radius:6px;border
                 <p class="price">৳900</p>
             </div>
         </div>
-
+ <!-- <-- ................!!!!!আতর!!!!........... -->
         <div class="product" onclick="openProduct('আতর (Attar)', 750, 'মনোমুগ্ধকর সুগন্ধি প্রিমিয়াম আতর।', 'https://images.unsplash.com/photo-1608571423902-eed4a5ad8108')">
             <img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108">
             <div class="product-content">
@@ -258,7 +315,7 @@ input,select{width:100%;padding:10px;margin-bottom:10px;border-radius:6px;border
                 <p class="price">৳750</p>
             </div>
         </div>
-
+ <!-- ................!!!!!পাঞ্জাবী!!!!........... -->
         <div class="product" onclick="openProduct('পাঞ্জাবী', 650, 'উন্নত মানের কটন পাঞ্জাবী।', 'https://i.pinimg.com/736x/85/19/41/8519418983763beb15cb1893cf355d4f.jpg')">
             <img src="https://i.pinimg.com/736x/85/19/41/8519418983763beb15cb1893cf355d4f.jpg">
             <div class="product-content">
@@ -268,6 +325,30 @@ input,select{width:100%;padding:10px;margin-bottom:10px;border-radius:6px;border
         </div>
     </div>
 
+    <!-- .........!!!!!স্টাইলিশ বোরকা!!!!!!!........ -->
+<div class="product" onclick="openProduct(
+'স্টাইলিশ বোরকা', 
+1800, 
+'উচ্চ মানের আরামদায়ক বোরকা', 
+'https://i.pinimg.com/736x/8e/54/e6/8e54e61494ba9595a434e6ba6d16a491.jpg'
+)">
+    
+    <img src="https://i.pinimg.com/736x/8e/54/e6/8e54e61494ba9595a434e6ba6d16a491.jpg">
+
+    <div class="product-content">
+        <h3>স্টাইলিশ বোরকা</h3>
+        <p class="price">৳1800</p>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+   <!-- .......!!!!আমার অফিসিয়াল চ্যানে!!!!..... -->
     <div class="social-section">
         <h2>আমার অফিসিয়াল চ্যানেল</h2>
         <ul class="wrapper">
@@ -447,6 +528,18 @@ input,select{width:100%;padding:10px;margin-bottom:10px;border-radius:6px;border
         window.open(url, "_blank");
     }
 </script>
+<div id="userBox" style="position:absolute; right:20px; top:20px; display:flex; align-items:center; gap:10px;">
+
+    <button id="loginBtn" onclick="scrollToLogin()" style="padding:8px 15px; border:none; border-radius:20px; cursor:pointer;">
+        Login
+    </button>
+
+    <div id="profile" style="display:none; align-items:center; gap:8px;">
+        <img id="userPic" src="" style="width:35px; height:35px; border-radius:50%;">
+        <span id="userName" style="font-weight:bold;"></span>
+    </div>
+
+</div>
 <!-- 🔥 শুধু নিচের অংশটা তোমার existing <script> এর একদম শেষে add করা হয়েছে -->
 
 <script>
