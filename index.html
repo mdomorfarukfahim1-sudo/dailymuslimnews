@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-<script src="https://accounts.google.com/gsi/client" async defer></script> 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Daily Muslim Shop</title>
@@ -209,67 +208,15 @@ input,select{width:100%;padding:10px;margin-bottom:10px;border-radius:6px;border
     </button>
 </header>
 
-<div style="text-align:center; margin-top:10px;">
-    
-    <div id="g_id_onload"
-        data-client_id="337102537435-eh5cdfi7n9ko71e2ed79qcfurro95e24.apps.googleusercontent.com"
-        data-callback="handleCredentialResponse"
-        data-auto_prompt="false">
-    </div>
 
-    <div class="g_id_signin"
-        data-type="standard"
-        data-size="large"
-        data-theme="outline"
-        data-text="sign_in_with"
-        data-shape="pill"
-        data-logo_alignment="left">
-    </div>
-
-    <p id="loginStatus" style="margin-top:8px; font-size:14px; color:#050505;"></p>
-
-</div>
-<script>
-// Google Login Handle
-function handleCredentialResponse(response) {
-    const data = parseJwt(response.credential);
-
-    // Show user name
-    document.getElementById("loginStatus").innerText =
-        "✅ Logged in: " + data.name;
-
-    // Save login
-    localStorage.setItem("user", JSON.stringify(data));
-}
-
-// JWT Decode
-function parseJwt(token) {
-    let base64Url = token.split('.')[1];
-    let base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-    let jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
-        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-    }).join(''));
-
-    return JSON.parse(jsonPayload);
-}
-
-// Auto Login (refresh করলে login থাকবে)
-window.onload = function() {
-    let user = JSON.parse(localStorage.getItem("user"));
-    if(user){
-        document.getElementById("loginStatus").innerText =
-            "✅ Logged in: " + user.name;
-    }
-}
-</script>
             
            <!-- all Product  -->
 
 
 <div id="home">
     <div class="products">
-        <div class="product" onclick="openProduct('আজওয়া খেজুর', 1200, 'অরিজিনাল মদিনার আজওয়া খেজুর।', 'https://i.pinimg.com/1200x/aa/b6/c3/aab6c3cea13805bce39f7a1b00bb271e.jpg')">
-            <img src="https://i.pinimg.com/1200x/aa/b6/c3/aab6c3cea13805bce39f7a1b00bb271e.jpg">
+        <div class="product" onclick="openProduct('আজওয়া খেজুর', 1200, 'অরিজিনাল মদিনার আজওয়া খেজুর।', 'https://scontent.fdac135-1.fna.fbcdn.net/v/t39.30808-6/663213207_122114566431226361_1440295604788910465_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=13d280&_nc_ohc=TUSnf6r59TkQ7kNvwHieLt8&_nc_oc=Adq14CyVbQSjfy4-fwTKQX-xmDHo4IN3IQJMZGfcW74PkgrO0XzkkxKHSPqHIBpc7xM&_nc_zt=23&_nc_ht=scontent.fdac135-1.fna&_nc_gid=hWJWWtZuHmAxsd-drzMy-A&_nc_ss=7a3a8&oh=00_Af0k2Y9D-NfH-jefiaVH18ZKguo89gpn8rx6U-alzhRrKA&oe=69D3E157')">
+            <img src="https://scontent.fdac135-1.fna.fbcdn.net/v/t39.30808-6/663213207_122114566431226361_1440295604788910465_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=13d280&_nc_ohc=TUSnf6r59TkQ7kNvwHieLt8&_nc_oc=Adq14CyVbQSjfy4-fwTKQX-xmDHo4IN3IQJMZGfcW74PkgrO0XzkkxKHSPqHIBpc7xM&_nc_zt=23&_nc_ht=scontent.fdac135-1.fna&_nc_gid=hWJWWtZuHmAxsd-drzMy-A&_nc_ss=7a3a8&oh=00_Af0k2Y9D-NfH-jefiaVH18ZKguo89gpn8rx6U-alzhRrKA&oe=69D3E157">
             <div class="product-content">
                 <h3>আজওয়া খেজুর</h3>
                 <p class="price">৳১২০০</p>
@@ -281,10 +228,10 @@ window.onload = function() {
 'নামাজের জানেমাজ ও কোরআন সেট', 
 1600,
 'এই সুন্দর ইসলামিক সেটটিতে রয়েছে উন্নত মানের জানেমাজ, পবিত্র কোরআন শরীফ এবং তাসবিহ। এটি দৈনন্দিন নামাজের জন্য উপযুক্ত এবং আত্মিক প্রশান্তি এনে দেয়।', 
-'https://i.pinimg.com/736x/15/be/5f/15be5f3e620d0a2cc961d6076d03e047.jpg')">
+'https://scontent.fdac135-1.fna.fbcdn.net/v/t39.30808-6/658787529_122114566563226361_208899609200908940_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=13d280&_nc_ohc=2ltRlmiSX6gQ7kNvwGV4mca&_nc_oc=AdqQlvHbtPNF6UYAbt3vIUAW3y2__n-vIDNgfG74WukatUNuvCTuWgKmjbSljx-mpCM&_nc_zt=23&_nc_ht=scontent.fdac135-1.fna&_nc_gid=_ubXSfouc8-kT2wy2BsYWA&_nc_ss=7a3a8&oh=00_Af1yTz6vVw1Uitbffmqr_XtR2XiV6h99iwqMDKSBwDAVGw&oe=69D3E8A3')">
 
     
-    <img src="https://i.pinimg.com/736x/15/be/5f/15be5f3e620d0a2cc961d6076d03e047.jpg">
+    <img src="https://scontent.fdac135-1.fna.fbcdn.net/v/t39.30808-6/658787529_122114566563226361_208899609200908940_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=13d280&_nc_ohc=2ltRlmiSX6gQ7kNvwGV4mca&_nc_oc=AdqQlvHbtPNF6UYAbt3vIUAW3y2__n-vIDNgfG74WukatUNuvCTuWgKmjbSljx-mpCM&_nc_zt=23&_nc_ht=scontent.fdac135-1.fna&_nc_gid=_ubXSfouc8-kT2wy2BsYWA&_nc_ss=7a3a8&oh=00_Af1yTz6vVw1Uitbffmqr_XtR2XiV6h99iwqMDKSBwDAVGw&oe=69D3E8A3">
 
     <div class="product-content">
         <h3>নামাজের জানেমাজ সেট</h3>
@@ -292,16 +239,16 @@ window.onload = function() {
     </div>
  <!-- ................!!!!!মেজুল খেজুর!!!!........... -->
 </div>
-        <div class="product" onclick="openProduct('Medjool Date (মেজুল খেজুর)', 900, 'আমাদের প্রিমিয়াম মানের খেজুর সরাসরি উৎকৃষ্ট মানের বাগান থেকে সংগ্রহ করা।', 'https://i.pinimg.com/736x/b0/72/22/b072225058767ec189a14f2726886209.jpg')">
-            <img src="https://i.pinimg.com/736x/b0/72/22/b072225058767ec189a14f2726886209.jpg">
+        <div class="product" onclick="openProduct('Medjool Date (মেজুল খেজুর)', 900, 'আমাদের প্রিমিয়াম মানের খেজুর সরাসরি উৎকৃষ্ট মানের বাগান থেকে সংগ্রহ করা।', 'https://scontent.fdac135-1.fna.fbcdn.net/v/t39.30808-6/660787387_122114566713226361_4903747850083637007_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=13d280&_nc_ohc=TbhO0GeRlkkQ7kNvwFhZBcH&_nc_oc=AdoBkpPgGl7qOBpS2KW0Hs-3_E4QZetLWPCZeYDx0MzUJDKcqD7MCBrZ8nsB7Xm7Dh8&_nc_zt=23&_nc_ht=scontent.fdac135-1.fna&_nc_gid=MJtBRKxW3Iu6FTdb7KuUOQ&_nc_ss=7a3a8&oh=00_Af3Oncmw1kIfaL77CizpumSkOqbCdCmPPV_yr9T_I3L2vQ&oe=69D3FD81')">
+            <img src="https://scontent.fdac135-1.fna.fbcdn.net/v/t39.30808-6/660787387_122114566713226361_4903747850083637007_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=13d280&_nc_ohc=TbhO0GeRlkkQ7kNvwFhZBcH&_nc_oc=AdoBkpPgGl7qOBpS2KW0Hs-3_E4QZetLWPCZeYDx0MzUJDKcqD7MCBrZ8nsB7Xm7Dh8&_nc_zt=23&_nc_ht=scontent.fdac135-1.fna&_nc_gid=MJtBRKxW3Iu6FTdb7KuUOQ&_nc_ss=7a3a8&oh=00_Af3Oncmw1kIfaL77CizpumSkOqbCdCmPPV_yr9T_I3L2vQ&oe=69D3FD81">
             <div class="product-content">
                 <h3>মেজুল খেজুর</h3>
                 <p class="price">৳৯০০</p>
             </div>
         </div>
  <!-- ................!!!!!মাবরুম খেজুর!!!!........... -->
-        <div class="product" onclick="openProduct('মাবরুম খেজুর', 900, 'সৌদি আরবের প্রিমিয়াম মাবরুম খেজুর।', 'https://i.pinimg.com/736x/ec/ab/fe/ecabfe6ac53da266f30e9b23386e3634.jpg')">
-            <img src="https://i.pinimg.com/736x/ec/ab/fe/ecabfe6ac53da266f30e9b23386e3634.jpg">
+        <div class="product" onclick="openProduct('মাবরুম খেজুর', 900, 'সৌদি আরবের প্রিমিয়াম মাবরুম খেজুর।', 'https://scontent.fdac135-1.fna.fbcdn.net/v/t39.30808-6/659580844_122114566611226361_1496587413324072366_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=13d280&_nc_ohc=wt-sF67zXawQ7kNvwEM3u38&_nc_oc=AdqoSvjKR8ikPrn4oOxLIKP69iieQUzwSs5S-F7aWvzf4_jaMuL-F23ig0WjGR_wAlM&_nc_zt=23&_nc_ht=scontent.fdac135-1.fna&_nc_gid=drhpu_YfqvfYPEO_Q65FmA&_nc_ss=7a3a8&oh=00_Af2ghd9sEkV0F6afpPHFXQ5lKC0okxhbitkgw29Syi_JRQ&oe=69D3D014')">
+            <img src="https://scontent.fdac135-1.fna.fbcdn.net/v/t39.30808-6/659580844_122114566611226361_1496587413324072366_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=13d280&_nc_ohc=wt-sF67zXawQ7kNvwEM3u38&_nc_oc=AdqoSvjKR8ikPrn4oOxLIKP69iieQUzwSs5S-F7aWvzf4_jaMuL-F23ig0WjGR_wAlM&_nc_zt=23&_nc_ht=scontent.fdac135-1.fna&_nc_gid=drhpu_YfqvfYPEO_Q65FmA&_nc_ss=7a3a8&oh=00_Af2ghd9sEkV0F6afpPHFXQ5lKC0okxhbitkgw29Syi_JRQ&oe=69D3D014">
             <div class="product-content">
                 <h3>মাবরুম খেজুর</h3>
                 <p class="price">৳৯০০</p>
@@ -309,25 +256,25 @@ window.onload = function() {
         </div>
         
  <!-- <-- ................!!!!!আতর!!!!........... -->
-        <div class="product" onclick="openProduct('আতর (Attar)', 750, 'মনোমুগ্ধকর সুগন্ধি প্রিমিয়াম আতর।', 'https://images.unsplash.com/photo-1608571423902-eed4a5ad8108')">
-            <img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108">
+        <div class="product" onclick="openProduct('আতর (Attar)', 750, 'মনোমুগ্ধকর সুগন্ধি প্রিমিয়াম আতর।', 'https://scontent.fdac135-1.fna.fbcdn.net/v/t39.30808-6/663302453_122114566473226361_8551874049195917372_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=13d280&_nc_ohc=gkDo1WW7cLcQ7kNvwHEBO3K&_nc_oc=AdqGg7zRYnov3wTlNsIyNkFOoVJvTxwQSqVFpGrHSQLIPAY-EYekgENsXQie8qgXrIk&_nc_zt=23&_nc_ht=scontent.fdac135-1.fna&_nc_gid=WrG8gxrcl23yU8rnL9LDEw&_nc_ss=7a3a8&oh=00_Af35tVRL7q1wWqt-umsOVq7Wi3MjNXysJq87UUj56RND2g&oe=69D3CD1C')">
+            <img src="https://scontent.fdac135-1.fna.fbcdn.net/v/t39.30808-6/663302453_122114566473226361_8551874049195917372_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=13d280&_nc_ohc=gkDo1WW7cLcQ7kNvwHEBO3K&_nc_oc=AdqGg7zRYnov3wTlNsIyNkFOoVJvTxwQSqVFpGrHSQLIPAY-EYekgENsXQie8qgXrIk&_nc_zt=23&_nc_ht=scontent.fdac135-1.fna&_nc_gid=WrG8gxrcl23yU8rnL9LDEw&_nc_ss=7a3a8&oh=00_Af35tVRL7q1wWqt-umsOVq7Wi3MjNXysJq87UUj56RND2g&oe=69D3CD1C">
             <div class="product-content">
                 <h3>আতর</h3>
                 <p class="price">৳৭৫০</p>
             </div>
         </div>
 <!-- ...........!!!!!!!!আতর ৫ পিস কম্বো প্যাক!!!!!!.......... -->
-             <div class="product" onclick="openProduct('আতর ৫ পিস কম্বো প্যাক', 650, '৫টি আতরের সেট। দীর্ঘস্থায়ী সুগন্ধ, নামাজ ও দৈনন্দিন ব্যবহারের জন্য উপযোগী।', 'https://i.pinimg.com/1200x/c3/b0/cf/c3b0cf8246b1807a26164ee7b8da3bdc.jpg' )">
-               <img src="https://i.pinimg.com/1200x/c3/b0/cf/c3b0cf8246b1807a26164ee7b8da3bdc.jpg">
+             <div class="product" onclick="openProduct('আতর ৫ পিস কম্বো প্যাক', 650, '৫টি আতরের সেট। দীর্ঘস্থায়ী সুগন্ধ, নামাজ ও দৈনন্দিন ব্যবহারের জন্য উপযোগী।', 'https://scontent.fdac135-1.fna.fbcdn.net/v/t39.30808-6/660530854_122114566437226361_2220844210729637836_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=13d280&_nc_ohc=rTYgyThRp7YQ7kNvwHNZeOt&_nc_oc=AdpA8JkdG0ny_QN4sgiQVIgCr8r5Y3FMrLfneMzLS0I9MScFdpW8rxV1zp6jIEVPuGU&_nc_zt=23&_nc_ht=scontent.fdac135-1.fna&_nc_gid=0gOrq9EnI6f5jHt94GHxCA&_nc_ss=7a3a8&oh=00_Af2q4W-tX-er6s5-BuOiwyrANdBCfn2DBCknnMGkXN2geQ&oe=69D3FBA6' )">
+               <img src="https://scontent.fdac135-1.fna.fbcdn.net/v/t39.30808-6/660530854_122114566437226361_2220844210729637836_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=13d280&_nc_ohc=rTYgyThRp7YQ7kNvwHNZeOt&_nc_oc=AdpA8JkdG0ny_QN4sgiQVIgCr8r5Y3FMrLfneMzLS0I9MScFdpW8rxV1zp6jIEVPuGU&_nc_zt=23&_nc_ht=scontent.fdac135-1.fna&_nc_gid=0gOrq9EnI6f5jHt94GHxCA&_nc_ss=7a3a8&oh=00_Af2q4W-tX-er6s5-BuOiwyrANdBCfn2DBCknnMGkXN2geQ&oe=69D3FBA6">
                <div class="product-content">
                 <h3>আতর ৫ পিস কম্বো প্যাক</h3>
                 <p class="price">৳৬৫০</p>
                </div>
              </div>
 
-     <!-- ...........!!!!!!!! প্রিমিয়াম কোয়ালিটির আতর ৫ পিস কম্বো প্যাক!!!!!!.......... -->
-      <div class="product" onclick="openProduct('প্রিমিয়াম কোয়ালিটির আতর ৫ পিস কম্বো প্যাক', 750,'প্রিমিয়াম কোয়ালিটির ৫টি আতরের সেট। দীর্ঘস্থায়ী সুগন্ধ, নামাজ ও দৈনন্দিন ব্যবহারের জন্য উপযোগী।', 'https://i.pinimg.com/1200x/c6/7a/7d/c67a7db0139566eeac1403012f3ba3df.jpg')">
-        <img src="https://i.pinimg.com/1200x/c6/7a/7d/c67a7db0139566eeac1403012f3ba3df.jpg">
+     <!-- ...........!!!!!!!! প্রিমিয়াম কোয়ালিটির আতর ৫ পিস কম্বো প্যাকপ্রিমিয়াম কোয়ালিটির আতর ৫ পিস কম্বো প্যাক!!!!!!.......... -->
+      <div class="product" onclick="openProduct('প্রিমিয়াম কোয়ালিটির আতর ৫ পিস কম্বো প্যাক', 750,'প্রিমিয়াম কোয়ালিটির ৫টি আতরের সেট। দীর্ঘস্থায়ী সুগন্ধ, নামাজ ও দৈনন্দিন ব্যবহারের জন্য উপযোগী।', 'https://scontent.fdac135-1.fna.fbcdn.net/v/t39.30808-6/659928634_122114566569226361_3043311038647699496_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=13d280&_nc_ohc=lANN-0821kwQ7kNvwE7P8oZ&_nc_oc=AdqpzbTqrz-bMlSZo44ajEhAiHrHMFnQ4F3BUmstlg8PZf1PYxmqWZ5XqcJPTFsVitk&_nc_zt=23&_nc_ht=scontent.fdac135-1.fna&_nc_gid=ES1GhxW9Li8BklDBQkMfHQ&_nc_ss=7a3a8&oh=00_Af1rMzKk9YyKAr1GJrXHqSPBaHH0_mS2zx_kkBIeokgUGg&oe=69D3F51C')">
+        <img src="https://scontent.fdac135-1.fna.fbcdn.net/v/t39.30808-6/659928634_122114566569226361_3043311038647699496_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=13d280&_nc_ohc=lANN-0821kwQ7kNvwE7P8oZ&_nc_oc=AdqpzbTqrz-bMlSZo44ajEhAiHrHMFnQ4F3BUmstlg8PZf1PYxmqWZ5XqcJPTFsVitk&_nc_zt=23&_nc_ht=scontent.fdac135-1.fna&_nc_gid=ES1GhxW9Li8BklDBQkMfHQ&_nc_ss=7a3a8&oh=00_Af1rMzKk9YyKAr1GJrXHqSPBaHH0_mS2zx_kkBIeokgUGg&oe=69D3F51C">
         <div class="product-content">
             <h3>প্রিমিয়াম কোয়ালিটির আতর ৫ পিস</h3>
             <p class="price">৳৭৫০</p>
@@ -336,8 +283,8 @@ window.onload = function() {
       </div>
 
 <!-- ...........!!!!!!!!!!!স্টাইলিশ কালো বোরখা!!!!!!!.......... -->
-        <div class="product" onclick="openProduct ('স্টাইলিশ কালো বোরখা', 1200, 'আরামদায়ক ও স্টাইলিশ কালো বোরখা। উন্নত মানের কাপড়, দৈনন্দিন ব্যবহার ও বিশেষ উপলক্ষের জন্য উপযুক্ত।', 'https://i.pinimg.com/736x/e6/e3/7f/e6e37f2fe6b8906f9e5c1b463052517d.jpg')">
-            <img src="https://i.pinimg.com/736x/e6/e3/7f/e6e37f2fe6b8906f9e5c1b463052517d.jpg">
+        <div class="product" onclick="openProduct ('স্টাইলিশ কালো বোরখা', 1200, 'আরামদায়ক ও স্টাইলিশ কালো বোরখা। উন্নত মানের কাপড়, দৈনন্দিন ব্যবহার ও বিশেষ উপলক্ষের জন্য উপযুক্ত।', 'https://scontent.fdac135-1.fna.fbcdn.net/v/t39.30808-6/659897652_122114566683226361_8476398335277062402_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=13d280&_nc_ohc=p4qKCXqGq50Q7kNvwEIKcZt&_nc_oc=AdqKyWOwY78IUJs_92z_WN9WrsC6qdEURAqx1esfy8EvdJAw4wzkcFsRuUL598C2Dn8&_nc_zt=23&_nc_ht=scontent.fdac135-1.fna&_nc_gid=VU5Hgli51f2r8-hwJW6aXw&_nc_ss=7a3a8&oh=00_Af2SMxDr0BWTXZOLckfXjXi80DtIKDYRFUokhNsXMkAIcA&oe=69D3E2A6')">
+            <img src="https://scontent.fdac135-1.fna.fbcdn.net/v/t39.30808-6/659897652_122114566683226361_8476398335277062402_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=13d280&_nc_ohc=p4qKCXqGq50Q7kNvwEIKcZt&_nc_oc=AdqKyWOwY78IUJs_92z_WN9WrsC6qdEURAqx1esfy8EvdJAw4wzkcFsRuUL598C2Dn8&_nc_zt=23&_nc_ht=scontent.fdac135-1.fna&_nc_gid=VU5Hgli51f2r8-hwJW6aXw&_nc_ss=7a3a8&oh=00_Af2SMxDr0BWTXZOLckfXjXi80DtIKDYRFUokhNsXMkAIcA&oe=69D3E2A6">
             <div class="product-content">
                 <h3>স্টাইলিশ কালো বোরখা</h3>
                 <p class="price">৳১২০০</p>
@@ -351,10 +298,10 @@ window.onload = function() {
 'স্টাইলিশ বোরকা', 
 1800, 
 'উচ্চ মানের আরামদায়ক বোরকা', 
-'https://i.pinimg.com/736x/8e/54/e6/8e54e61494ba9595a434e6ba6d16a491.jpg'
+'https://scontent.fdac135-1.fna.fbcdn.net/v/t39.30808-6/658891896_122114567763226361_6475640155253519894_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=13d280&_nc_ohc=Esqth-8WPosQ7kNvwFbNVY-&_nc_oc=AdqvYA2qRDcqYQB9of2xnzoQDmnryH7IDdW0aQbJ3p45U4cKbnbyEZiyeAkT60XgGXo&_nc_zt=23&_nc_ht=scontent.fdac135-1.fna&_nc_gid=ssukjZBj1LYzoNhjDUHDCg&_nc_ss=7a3a8&oh=00_Af3CuWEe_3Cuj5hMgyvTDqUKJxO3jkpTLBngiIKCmyqeFQ&oe=69D3E70F'
 )">
     
-    <img src="https://i.pinimg.com/736x/8e/54/e6/8e54e61494ba9595a434e6ba6d16a491.jpg">
+    <img src="https://scontent.fdac135-1.fna.fbcdn.net/v/t39.30808-6/658891896_122114567763226361_6475640155253519894_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=13d280&_nc_ohc=Esqth-8WPosQ7kNvwFbNVY-&_nc_oc=AdqvYA2qRDcqYQB9of2xnzoQDmnryH7IDdW0aQbJ3p45U4cKbnbyEZiyeAkT60XgGXo&_nc_zt=23&_nc_ht=scontent.fdac135-1.fna&_nc_gid=ssukjZBj1LYzoNhjDUHDCg&_nc_ss=7a3a8&oh=00_Af3CuWEe_3Cuj5hMgyvTDqUKJxO3jkpTLBngiIKCmyqeFQ&oe=69D3E70F">
 
     <div class="product-content">
         <h3>স্টাইলিশ বোরকা</h3>
@@ -365,8 +312,8 @@ window.onload = function() {
 
 
  <!-- ................!!!!!পাঞ্জাবী!!!!........... -->
-        <div class="product" onclick="openProduct('পাঞ্জাবী', 650, 'উন্নত মানের কটন পাঞ্জাবী।', 'https://i.pinimg.com/736x/85/19/41/8519418983763beb15cb1893cf355d4f.jpg')">
-            <img src="https://i.pinimg.com/736x/85/19/41/8519418983763beb15cb1893cf355d4f.jpg">
+        <div class="product" onclick="openProduct('পাঞ্জাবী', 650, 'উন্নত মানের কটন পাঞ্জাবী।', 'https://scontent.fdac135-1.fna.fbcdn.net/v/t39.30808-6/661044221_122114568015226361_1073539867426162370_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=13d280&_nc_ohc=ShYIUS3shXEQ7kNvwGMYmY2&_nc_oc=AdqhDFAIYx0d0LgD3WIegQg_xawr36UeOSOrLFKUqOVEBDAXr7Wo4cC8PHExX6hpdQI&_nc_zt=23&_nc_ht=scontent.fdac135-1.fna&_nc_gid=mAUsxVENq-3fOteRwTR3gQ&_nc_ss=7a3a8&oh=00_Af1tu5HDUGdguJyvvUav_A_K4CYt-j5WzdPNmPfi4P0lwA&oe=69D3E3A6')">
+            <img src="https://scontent.fdac135-1.fna.fbcdn.net/v/t39.30808-6/661044221_122114568015226361_1073539867426162370_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=13d280&_nc_ohc=ShYIUS3shXEQ7kNvwGMYmY2&_nc_oc=AdqhDFAIYx0d0LgD3WIegQg_xawr36UeOSOrLFKUqOVEBDAXr7Wo4cC8PHExX6hpdQI&_nc_zt=23&_nc_ht=scontent.fdac135-1.fna&_nc_gid=mAUsxVENq-3fOteRwTR3gQ&_nc_ss=7a3a8&oh=00_Af1tu5HDUGdguJyvvUav_A_K4CYt-j5WzdPNmPfi4P0lwA&oe=69D3E3A6">
             <div class="product-content">
                 <h3>পাঞ্জাবী</h3>
                 <p class="price">৳৬৫০</p>
@@ -404,7 +351,7 @@ window.onload = function() {
     </div>
 
     <div class="notice-box">
-        <p><strong>বিদ্রো:</strong> আমরা সরাসরি আমদানিকারক থেকে সংগ্রহ করা প্রিমিয়াম কোয়ালিটির পণ্য নিশ্চিত করি। </p>
+        <p><strong>বিদ্রো:</strong> আমরা সরাসরি আমদানিকারক থেকে সংগ্রহ করা প্রিমিয়াম কোয়ালিটির পণ্য নিশ্চিত করি। পণ্য হাতে পেয়ে চেক করে পেমেন্ট করার সুযোগ রয়েছে।</p>
     </div>
 </div>
 
@@ -455,7 +402,6 @@ window.onload = function() {
     <select id="paymentMethod" onchange="toggleBkashInfo()">
         <option value="Cash on Delivery">Cash on Delivery</option>
         <option value="bKash">bKash</option>
-        <option value="Nagad">Nagad</option>
     </select>
     <p id="bkashInfo" style="display:none; color:green; background: #eaffea; padding: 10px; border-radius: 5px;">
         আমাদের বিকাশ নম্বর: <b>01581523467</b> (Send Money)
